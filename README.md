@@ -1,4 +1,4 @@
 Docker files for Disco
 ----------------------
 
-i![Image](../blob/master/discodocker.png?raw=true)
+i![Image](https://raw.github.com/gijzelaerr/discodocker/master/discodocker.png)
