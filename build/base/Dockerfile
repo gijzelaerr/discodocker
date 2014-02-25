@@ -1,4 +1,5 @@
-FROM ubuntu
+#FROM ubuntu
+FROM gijzelaerr/trusty
 MAINTAINER gijs@pythonic.nl
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -12,7 +13,7 @@ ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # setup ssh
 RUN echo root:ska | chpasswd
-RUN mkdir /var/run/sshd
+RUN mkdir -p /var/run/sshd
 
 ## passwordless login for localhost
 RUN mkdir -p /root/.ssh
