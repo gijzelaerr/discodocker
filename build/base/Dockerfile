@@ -5,8 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y curl erlang git make python openssh-server supervisor
 
-ADD scripts /scripts
-
 # setup ssh
 RUN echo root:ska | chpasswd
 RUN mkdir -p /var/run/sshd
@@ -28,6 +26,12 @@ RUN cat /etc/ssh/ssh_host_rsa_key.pub >> /home/disco/.ssh/known_hosts
 RUN chown disco -R /home/disco/.ssh
 
 ## install disco
-RUN /scripts/discostable.sh
+git clone https://github.com/discoproject/disco.git /disco
+cd /disco
+#git checkout tags/0.5
+git checkout master
+make
+make install
+
 RUN chown -R disco /usr/local/var/disco
 
