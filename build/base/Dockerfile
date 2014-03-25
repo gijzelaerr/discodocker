@@ -1,10 +1,9 @@
 FROM ubuntu
-#FROM gijzelaerr/trusty
 MAINTAINER gijs@pythonic.nl
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get install -y curl erlang-base git make python erlang-parsetools erlang-inets erlang-dev openssh-server supervisor
+RUN apt-get install -y curl erlang git make python openssh-server supervisor
 
 ADD scripts /scripts
 
