@@ -26,12 +26,11 @@ RUN cat /etc/ssh/ssh_host_rsa_key.pub >> /home/disco/.ssh/known_hosts
 RUN chown disco -R /home/disco/.ssh
 
 ## install disco
-git clone https://github.com/discoproject/disco.git /disco
-cd /disco
-#git checkout tags/0.5
-git checkout master
-make
-make install
+RUN git clone https://github.com/discoproject/disco.git /disco
+RUN cd /disco && git checkout tags/0.5
+#RUN cd /disco && git checkout master
+RUN cd /disco && make
+RUN cd /disco && make install
 
 RUN chown -R disco /usr/local/var/disco
 
