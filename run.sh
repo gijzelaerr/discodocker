@@ -13,6 +13,7 @@ docker run \
     -t \
     -p 2222:22 \
     -p 8989:8989 \
+    -v `pwd`/data:/data \
     -name discoservice \
     gijzelaerr/discoservice
 
