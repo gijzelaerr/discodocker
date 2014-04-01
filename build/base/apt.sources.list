@@ -1,0 +1,4 @@
+deb http://za.archive.ubuntu.com/ubuntu/ precise main universe multiverse restricted
+deb http://za.archive.ubuntu.com/ubuntu/ precise-updates main universe multiverse restricted
+deb http://za.archive.ubuntu.com/ubuntu precise-backports main universe multiverse restricted
+deb http://security.ubuntu.com/ubuntu precise-security main universe multiverse restricted

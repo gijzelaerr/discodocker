@@ -2,7 +2,10 @@ FROM ubuntu
 MAINTAINER gijs@pythonic.nl
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD apt.sources.list /etc/apt/apt.sources.list
+
 RUN apt-get update
+RUN apt-get dist-upgrade -y
 RUN apt-get install -y curl erlang git make python openssh-server supervisor
 
 ADD scripts /scripts
