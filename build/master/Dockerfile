@@ -4,7 +4,8 @@ FROM gijzelaerr/discobase
 RUN apt-get install -y python-pycurl lighttpd
 
 # needed for running ssh and disco services
-ADD conf/supervisord.conf /etc/supervisor/conf.d/disco.conf
+ADD supervisord.conf /etc/supervisor/conf.d/disco.conf
+ADD disco-settings.py /etc/disco/settings.py
 
 # expose ssh and disco ports
 EXPOSE 22/tcp 8989/tcp 8999/tcp
