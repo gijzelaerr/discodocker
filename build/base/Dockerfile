@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER gijs@pythonic.nl
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -30,10 +30,10 @@ RUN chown disco -R /home/disco/.ssh
 
 ## install disco
 RUN git clone https://github.com/discoproject/disco.git /disco
-RUN cd /disco && git checkout tags/0.5
-#RUN cd /disco && git checkout master
+RUN cd /disco && git checkout tags/0.5.3
+RUN cd /disco && git checkout master
 RUN cd /disco && make
-RUN cd /disco && make install
+RUN cd /disco && make install prefix=/usr/local
 
 RUN chown -R disco /usr/local/var/disco
 
