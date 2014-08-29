@@ -24,8 +24,6 @@ docker port discomaster 22
 docker port discomaster 8989
 
 docker run \
-    -t \
-    -i \
     --link=discomaster:discomaster \
     --volumes-from discomaster \
     gijzelaerr/discotest \
