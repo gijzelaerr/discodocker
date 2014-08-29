@@ -1,7 +1,7 @@
 #!/bin/bash -ev
 
-#DATA=`pwd`/data
-DATA="/home/makhathini/prina/MS"
+HERE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DATA=${HERE}/data
 
 docker build -t gijzelaerr/discobase build/base
 docker build -t gijzelaerr/discomaster build/master
